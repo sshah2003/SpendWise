@@ -8,16 +8,25 @@
 
 import SwiftUI
 
-struct CardModel: Identifiable, Codable {
+import SwiftUI
+
+struct CardModel: Identifiable, Equatable {
     var id = UUID()
-    let cardName: String
-    let lastFour: String
-    let cardColor: String // Stored as a hex string
-    
+    var cardName: String
+    var lastFour: String
+    var cardColor: String // Store hex code
+
+    // Computed property to convert hex string to SwiftUI Color
     var color: Color {
-        Color(hex: cardColor) ?? .gray // Convert to SwiftUI Color
+        Color(hex: cardColor) ?? Color.gray
+    }
+
+    static func == (lhs: CardModel, rhs: CardModel) -> Bool {
+        return lhs.cardName == rhs.cardName && lhs.lastFour == rhs.lastFour && lhs.cardColor == rhs.cardColor
     }
 }
+
+
 
 // Extension to convert Hex string to Color
 extension Color {

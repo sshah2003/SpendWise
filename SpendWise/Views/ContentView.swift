@@ -38,3 +38,6 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+
+//swift data, async await, swift concurency, architectual pattern

@@ -22,7 +22,7 @@ struct TransactionView: View {
     
     @State private var cards: [CardModel] = [
         CardModel(cardName: "Chase Sapphire", lastFour: "1234", cardColor: "#3498db"),
-        CardModel(cardName: "Amex Platinum", lastFour: "5678", cardColor: "#7f8c8d")
+        CardModel(cardName: "Amex Platinum", lastFour: "5678", cardColor: "#7a546b")
     ]
     
     var filteredTransactions: [Transaction] {
